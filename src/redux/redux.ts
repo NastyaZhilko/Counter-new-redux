@@ -1,7 +1,11 @@
+const FOR_MESSAGE = 'FOR_MESSAGE'
+const CHANGE_START_VALUE = 'CHANGE_START_VALUE'
+const CHANGE_MAX_VALUE = 'CHANGE_MAX_VALUE'
+const INC_BUTTON = 'INC_BUTTON'
+const RESET_BUTTON = 'RESET_BUTTON'
+const SET_BUTTON = 'SET_BUTTON'
 
-export type CountType={
 
-}
 
 export type ActionType=
     ReturnType<typeof forMessage>|
@@ -11,27 +15,49 @@ export type ActionType=
     ReturnType<typeof resetButton>|
     ReturnType<typeof setButton>
 
-export const countReducer=(state:CountType, action: ActionType )=>{
+let initialState={
+    counter:0,
+    startValue:0,
+    maxValue:5,
+    disabledSet:true,
+    disabledInc:false,
+    disabledReset:true,
+    message:''
+}
+export const countReducer=(state=initialState, action: ActionType )=>{
     switch(action.type){
-        case FORMESSAGE:
-            return{}
-        case CHANGE_START_VALUE:
-            return{}
-        case CHANGE_MAX_VALUE:
-            return{}
-        case INC_BUTTON:
-            return{}
-        case RESET_BUTTON:
-            return{}
-        case SET_BUTTON:
-            return{}
+        case 'FOR_MESSAGE':
+            return{
+
+            }
+        case 'CHANGE_START_VALUE':
+            return{
+
+            }
+        case 'CHANGE_MAX_VALUE':
+            return{
+
+            }
+        case 'INC_BUTTON':
+            return{
+                ...state,
+                count: action.count+1
+            }
+        case 'RESET_BUTTON':
+            return{
+
+            }
+        case 'SET_BUTTON':
+            return{
+
+            }
         default:
             return
     }
 }
 
 export const forMessage = (startValue: number, maxValue: number) => {
-    return {type: FORMESSAGE, startValue, maxValue } as const
+    return {type: FOR_MESSAGE, startValue, maxValue } as const
 }
 export const changeStartValue = (startValue: number) => {
     return {type: CHANGE_START_VALUE, startValue} as const
@@ -39,8 +65,8 @@ export const changeStartValue = (startValue: number) => {
 export const changeMaxValue = (maxValue: number) => {
     return {type: CHANGE_MAX_VALUE, maxValue} as const
 }
-export const incButton = () => {
-    return {type: INC_BUTTON} as const
+export const incButton = (count:number) => {
+    return {type: INC_BUTTON,count} as const
 }
 export const resetButton = () => {
     return {type: RESET_BUTTON} as const
