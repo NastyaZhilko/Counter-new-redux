@@ -1,0 +1,50 @@
+
+
+body {
+    background-color: #282c34;
+}
+
+button {
+
+    margin: 10px;
+    width: 90px;
+    border-radius: 7px;
+    border: 5px solid #7ce5ff;
+    background-color: #7ce5ff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.App {
+    text-align: center;
+    color: cadetblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Button {
+    text-align: center;
+    display: inline-block;
+    border-radius: 4px;
+    border: 5px solid cadetblue;
+    margin-top: 10px;
+    width: 400px;
+    height: 80px;
+
+}
+
+
+.body {
+    border: 5px solid cadetblue;
+    padding: 70px 30px;
+    border-radius: 10px;
+    width: 400px;
+    height: 200px;
+
+
+}
