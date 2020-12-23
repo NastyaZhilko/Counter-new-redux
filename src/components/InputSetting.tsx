@@ -9,7 +9,6 @@ export type InputSettingsType = {
     message?: boolean
 }
 
-
 export const InputSettings = (props: InputSettingsType) => {
     const changeValue = (e: ChangeEvent<HTMLInputElement>) => {
         props.changeValue(Number(e.currentTarget.value))

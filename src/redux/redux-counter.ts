@@ -1,6 +1,6 @@
 import {restoreState, saveValue} from "../localStorage/LocalStarage";
 
-const FOR_MESSAGE = 'FOR_MESSAGE'
+
 const INC_BUTTON = 'INC_BUTTON'
 const RESET_BUTTON = 'RESET_BUTTON'
 const CHANGE_START_VALUE = 'CHANGE_START_VALUE'
@@ -49,7 +49,6 @@ export const countReducer = (state: CountReducerType = initialState, action: Act
                 stateCopy.disabledReset = false
                 stateCopy.disabledInc = true
             }
-
             return stateCopy
 
         }

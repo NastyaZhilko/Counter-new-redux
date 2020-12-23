@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import s from './App.module.css';
 import {ButtonComp} from "./components/Button";
 import {InputComp} from "./components/Input";
 import {InputSettings} from "./components/InputSetting";
-import {saveValue} from "./localStorage/LocalStarage";
 import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "./redux/store";
 import {
@@ -15,24 +14,19 @@ import {
     setButtonAC
 } from "./redux/redux-counter";
 
-/*const errorMes: string = 'Incorrect value'
-const setMess: string = "enter values and press 'set'"*/
-
 function App() {
-    const dispatch=useDispatch();
-    const counter= useSelector<AppStateType, CountReducerType>(state=>state.counter)
+    const dispatch = useDispatch();
+    const counter = useSelector<AppStateType, CountReducerType>(state => state.counter)
 
 //меняем стартовое значение
     const changeStartValue = (startValue: number) => {
         dispatch(changeStartValueAC(startValue))
-
     }
-    //меняем максимальное значение
+//меняем максимальное значение
     const changeMaxValue = (maxValue: number) => {
         dispatch(changeMaxValueAC(maxValue))
-
     }
-    //увеличиваем значение на 1 при нажание ни кнопку "inc"
+//увеличиваем значение на 1 при нажание ни кнопку "inc"
     const incButton = () => {
         dispatch(incButtonAC())
     }
@@ -92,7 +86,6 @@ function App() {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 }
