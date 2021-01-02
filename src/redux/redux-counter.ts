@@ -42,9 +42,9 @@ export const countReducer = (state: CountReducerType = initialState, action: Act
         case 'INC_BUTTON': {
             const stateCopy = {...state}
             if (stateCopy.count < stateCopy.maxValue) {
-                stateCopy.count = (stateCopy.count + 1)
-                stateCopy.disabledInc = false
-                stateCopy.disabledReset = true
+                stateCopy.count = (stateCopy.count+1)
+                stateCopy.disabledInc = stateCopy.count >= stateCopy.maxValue
+                stateCopy.disabledReset = stateCopy.count < stateCopy.maxValue
             } else {
                 stateCopy.disabledReset = false
                 stateCopy.disabledInc = true
@@ -61,16 +61,13 @@ export const countReducer = (state: CountReducerType = initialState, action: Act
         }
         case 'CHANGE_START_VALUE': {
             const stateCopy = {...state}
+            stateCopy.disabledReset = true
+            stateCopy.disabledInc = true
+            stateCopy.startValue = action.startValue
             if((stateCopy.maxValue <= action.startValue) || (action.startValue < 0)){
-                stateCopy.startValue = action.startValue
-                stateCopy.disabledReset = true
-                stateCopy.disabledInc = true
                 stateCopy.disabledSet = true
                 stateCopy.message = 'Incorrect value'
             }else{
-                stateCopy.startValue = action.startValue
-                stateCopy.disabledReset = true
-                stateCopy.disabledInc = true
                 stateCopy.disabledSet = false
                 stateCopy.message = "enter values and press 'set'"
             }

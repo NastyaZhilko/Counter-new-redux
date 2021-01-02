@@ -4,6 +4,7 @@ export type ButtonCompType = {
     clickOnButton: () => void
     title: string
     disabledButton: boolean
+
 }
 export const ButtonComp = (props:ButtonCompType) => {
     return (
